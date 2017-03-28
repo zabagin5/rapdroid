@@ -3,29 +3,23 @@
 
 
 
-    <item android:title="Inbox"
-          android:id="@+id/nav_item_inbox"
-          android:icon="@drawable/inbox"/>
+    <item android:title="Etalase Kamera"
+          android:id="@+id/etalase"
+          android:icon="@drawable/ic_home_white_24dp"/>
+
+    <item android:title="Cart"
+        android:id="@+id/cart"
+        android:icon="@drawable/ic_shopping_cart_white_24dp" />
 
     <item android:title="Panduan"
           android:id="@+id/panduan"
-          android:icon="@drawable/inbox"/>
-
-
-    <item android:title="Sent"
-          android:id="@+id/nav_item_sent"
-          android:icon="@drawable/sent"/>
-
-    <item android:title="Drafts"
-          android:id="@+id/nav_item_draft"
-          android:icon="@drawable/draft"/>
+          android:icon="@drawable/ic_book_white_24dp"/>
 
     <group android:id="@+id/group_settings_id">
 
-        <item android:title="Settings"
-              android:icon="@drawable/settings"/>
-        <item android:title="Help"
-             android:icon="@drawable/help"/>
+        <item android:title="About Us"
+             android:id="@+id/about"
+             android:icon="@drawable/ic_info_white_24dp"/>
     </group>
 
 

@@ -43,13 +43,14 @@ public class MainActivity extends AppCompatActivity{
              @Override
              public boolean onNavigationItemSelected(MenuItem menuItem) {
                 mDrawerLayout.closeDrawers();
-                 if (menuItem.getItemId() == R.id.nav_item_sent) {
-                     FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                     fragmentTransaction.replace(R.id.containerView,new SentFragment()).commit();
-                 }
-                 if (menuItem.getItemId() == R.id.nav_item_inbox) {
+
+                 if (menuItem.getItemId() == R.id.etalase) {
                     FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
                     xfragmentTransaction.replace(R.id.containerView,new TabFragment()).commit();
+                 }
+                 if (menuItem.getItemId() == R.id.cart) {
+                     FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
+                     fragmentTransaction.replace(R.id.containerView,new cart()).commit();
                  }
                  if (menuItem.getItemId() == R.id.panduan) {
                      FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
