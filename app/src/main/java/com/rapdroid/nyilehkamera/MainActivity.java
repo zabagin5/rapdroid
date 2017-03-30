@@ -1,5 +1,6 @@
 package com.rapdroid.nyilehkamera;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -50,8 +51,7 @@ public class MainActivity extends AppCompatActivity{
                     xfragmentTransaction.replace(R.id.containerView,new TabFragment()).commit();
                  }
                  if (menuItem.getItemId() == R.id.cart) {
-                     FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                     fragmentTransaction.replace(R.id.containerView,new cart()).commit();
+                     startActivity(new Intent(getApplicationContext(),Keranjang.class));
                  }
                  if (menuItem.getItemId() == R.id.panduan) {
                      FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
