@@ -11,9 +11,17 @@
         android:id="@+id/cart"
         android:icon="@drawable/ic_shopping_cart_white_24dp" />
 
+    <item android:title="Payment"
+        android:id="@+id/payment"
+        android:icon="@drawable/ic_shopping_cart_white_24dp" />
+
     <item android:title="Panduan"
           android:id="@+id/panduan"
           android:icon="@drawable/ic_book_white_24dp"/>
+
+    <item android:title="Join with Us"
+        android:id="@+id/join"
+        android:icon="@drawable/ic_book_white_24dp"/>
 
     <group android:id="@+id/group_settings_id">
 

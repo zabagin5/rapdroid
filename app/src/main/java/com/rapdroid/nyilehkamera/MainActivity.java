@@ -61,6 +61,12 @@ public class MainActivity extends AppCompatActivity{
                      FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
                      xfragmentTransaction.replace(R.id.containerView,new about()).commit();
                  }
+                 if (menuItem.getItemId() == R.id.join) {
+                     startActivity(new Intent(getApplicationContext(),join.class));
+                 }
+                 if (menuItem.getItemId() == R.id.payment) {
+                     startActivity(new Intent(getApplicationContext(),payment.class));
+                 }
                  return false;
             }
 
