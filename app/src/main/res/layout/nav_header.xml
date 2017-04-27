@@ -9,7 +9,7 @@
     android:paddingLeft="64dp"
     android:paddingRight="64dp"
     android:paddingTop="16dp"
-    android:background="@color/white"
+    android:background="@color/colorPrimaryblue"
     tools:context=".MainActivity">
 
     <ImageView
@@ -23,6 +23,7 @@
     <TextView
         android:id="@+id/textView"
         android:gravity="center"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/nametag2" />

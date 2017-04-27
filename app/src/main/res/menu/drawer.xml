@@ -5,9 +5,6 @@
             <item android:title="Sent" android:icon="@drawable/senta"></item>
             <item android:title="Drafts" android:icon="@drawable/draft"></item>
 
-
-
-
     <item android:title="Others">
         <menu>
             <item
@@ -22,9 +19,5 @@
             <item android:title="Settings" android:icon="@drawable/settings"></item>
             <item android:title="Help" android:icon="@drawable/help"></item>
     </group>
-
-
-
-
 
 </menu>

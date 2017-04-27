@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-
+    <item android:title="Join with Us"
+        android:id="@+id/join"
+        android:icon="@drawable/ic_account_circle_white_24dp"/>
 
     <item android:title="Etalase Kamera"
           android:id="@+id/etalase"
@@ -13,15 +15,11 @@
 
     <item android:title="Payment"
         android:id="@+id/payment"
-        android:icon="@drawable/ic_shopping_cart_white_24dp" />
+        android:icon="@drawable/ic_attach_money_white_24dp" />
 
     <item android:title="Panduan"
           android:id="@+id/panduan"
           android:icon="@drawable/ic_book_white_24dp"/>
-
-    <item android:title="Join with Us"
-        android:id="@+id/join"
-        android:icon="@drawable/ic_book_white_24dp"/>
 
     <group android:id="@+id/group_settings_id">
 
