@@ -7,6 +7,49 @@ import android.support.v4.app.Fragment;
  */
 public class DslrFragment extends Fragment {
 
+    /** public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.dslr_layout, container, false);
+
+        GridView gridView = (GridView) view.findViewById(R.id.dslrgrid);
+        gridView.setAdapter(new ImageAdapter(this));
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                Toast.makeText(getActivity(), "" + position, Toast.LENGTH_SHORT).show();
+            }
+        });
+        return view;
+    }
+} **/
+
+/**
+    @Override
+    public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.dslr_layout,container,false);
+        GridView gridView = (GridView)getActivity().findViewById(R.id.dslrgrid);
+        gridView.setAdapter(new ImageAdapter(getActivity()));
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id){
+                Toast.makeText(getActivity(),"" + position,Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return view;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        GridView gridView = (GridView)this.getActivity().findViewById(R.id.dslrgrid);
+        gridView.setAdapter(new ImageAdapter(this));
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
    /** @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

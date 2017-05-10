@@ -1,16 +1,13 @@
 package com.rapdroid.nyilehkamera;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.ImageView;
 
 /**
  * Created by M. HILMI PRASETYA on 3/31/2017.
  */
 
 public class viewimagdslr extends Activity {
-    @Override
+    /** @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dslr_layout);
@@ -22,5 +19,5 @@ public class viewimagdslr extends Activity {
 
         ImageView imageView = (ImageView)findViewById(R.id.dslrgrid);
         imageView.setImageResource(imageAdapter.mThumbIds[position]);
-    }
+    } **/
 }

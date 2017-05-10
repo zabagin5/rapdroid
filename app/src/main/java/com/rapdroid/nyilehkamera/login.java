@@ -1,81 +1,113 @@
 package com.rapdroid.nyilehkamera;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import static com.rapdroid.nyilehkamera.R.id.password;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class login extends AppCompatActivity {
+
+    private EditText inputEmail, inputPassword;
+    private FirebaseAuth auth;
+    private ProgressBar progressBar;
+    private Button btnSignup, btnLogin, btnReset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
 
-        /** Button btnlogin = (Button) findViewById(R.id.logintes);
-        btnlogin.setOnClickListener(new View.OnClickListener(){
-            Name =
-        }); **/
-    }
+        //Get Firebase auth instance
+        auth = FirebaseAuth.getInstance();
 
-
-    private class LongOperation extends AsyncTask<String, Void, Void>{
-        private ProgressDialog Dialog = new ProgressDialog(login.this);
-        boolean berhasil = false;
-        String[]id,nama;
-
-        protected void onPreExecute(){
-            Dialog.setMessage("Loading please wait");
-            Dialog.show();
-        }
-
-        @Override
-        protected Void doInBackground(String... urls) {
-            JSONObject json = JSONParser.getJSONfromURL("http://jti.polije.ac.id/login.php?username="+nama+"&password="+password+"");
-            try {
-
-                JSONArray data = json.getJSONArray("data");
-                Log.e("Main Jumlah : ",""+data.length());
-
-                if (data.length() >= 1){
-                    JSONObject jsonobj = data.getJSONObject(0);
-                    id = new String [data.length()];
-                    nama = new String[data.length()];
-                    //SharedPreferences.Editor editor = pref.edit();
-                    for (int i=0; i<data.length();i++){
-                       /** nama[i] = jsonobj.getString("nama");
-                        id[i] = jsonobj.getString("password");
-                        editor.putString("nama",nama[i]);
-                        editor.putString("nohp",id[i]);
-                        editor.commit(); **/
-                        Log.e("Nama", nama[i]+" "+id);
-                    }
-                } else {
-                    Toast.makeText(login.this,"Login Gagal",Toast.LENGTH_LONG).show();
-                }
-
-            } catch (JSONException e) {
-                Log.e("log_tag","error parsing data"+ e.toString());
-            }
-
-            return null;
-        }
-
-        protected void onPostExecute(Void unused){
-            Dialog.dismiss();
-            startActivity(new Intent(login.this,MainActivity.class));
+        if (auth.getCurrentUser() != null) {
+            startActivity(new Intent(login.this, login.class));
             finish();
         }
 
+        // set the view now
+        setContentView(R.layout.activity_login);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        inputEmail = (EditText) findViewById(R.id.email);
+        inputPassword = (EditText) findViewById(R.id.password);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        btnSignup = (Button) findViewById(R.id.btn_signup);
+        btnLogin = (Button) findViewById(R.id.btn_login);
+        btnReset = (Button) findViewById(R.id.btn_reset_password);
+
+        //Get Firebase auth instance
+        auth = FirebaseAuth.getInstance();
+
+        btnSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(login.this, join.class));
+            }
+        });
+
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(login.this, ResetPasswordActivity.class));
+            }
+        });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = inputEmail.getText().toString();
+                final String password = inputPassword.getText().toString();
+
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                progressBar.setVisibility(View.VISIBLE);
+
+                //authenticate user
+                auth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(login.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                // If sign in fails, display a message to the user. If sign in succeeds
+                                // the auth state listener will be notified and logic to handle the
+                                // signed in user can be handled in the listener.
+                                progressBar.setVisibility(View.GONE);
+                                if (!task.isSuccessful()) {
+                                    // there was an error
+                                    if (password.length() < 6) {
+                                        inputPassword.setError(getString(R.string.minimum_password));
+                                    } else {
+                                        Toast.makeText(login.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
+                                    }
+                                } else {
+                                    Intent intent = new Intent(login.this, MainActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }
+                        });
+            }
+        });
     }
 }

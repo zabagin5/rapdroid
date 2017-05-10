@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:paddingBottom="16dp"
     android:paddingLeft="64dp"
     android:paddingRight="64dp"
@@ -15,14 +15,14 @@
     <ImageView
         android:id="@+id/image"
         android:paddingTop="16dp"
-        android:src="@drawable/tes"
+        android:src="@drawable/logo_putih"
         tools:ignore="ContentDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="111dp" />
+        android:layout_width="169dp"
+        android:layout_height="69dp" />
 
     <TextView
         android:id="@+id/textView"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

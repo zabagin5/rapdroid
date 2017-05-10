@@ -1,18 +1,12 @@
 package com.rapdroid.nyilehkamera;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.GridView;
-import android.widget.ImageView;
-
 /**
  * Created by M. HILMI PRASETYA on 3/31/2017.
  */
-public class ImageAdapter extends BaseAdapter {
-    private viewimagdslr mContext;
+public class ImageAdapter  {
+    /** private DslrFragment mContext;
 
-    public  ImageAdapter(viewimagdslr c) {
+    public  ImageAdapter(DslrFragment c) {
         mContext = c;
     }
 
@@ -50,5 +44,5 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.kamera, R.drawable.kamera,
             R.drawable.kamera, R.drawable.kamera,
             R.drawable.kamera, R.drawable.kamera
-    };
+    }; **/
 }

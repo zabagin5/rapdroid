@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "421538241284",
+    "firebase_url": "https://nyikam-477ad.firebaseio.com",
+    "project_id": "nyikam-477ad",
+    "storage_bucket": "nyikam-477ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:421538241284:android:b6df960159f8b6a6",
+        "android_client_info": {
+          "package_name": "com.rapdroid.nyilehkamera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "421538241284-t5h1s9ldjr6ppi2aos8dgjl9ktduav1h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rapdroid.nyilehkamera",
+            "certificate_hash": "c43503bb4c31fa5227e1a4c37178ab7214e615b4"
+          }
+        },
+        {
+          "client_id": "421538241284-tf3osdo9r40hkhoifv0mkdeggqpsn7ep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwB03b1ifV444z4DTA8xNgbax3lb-fKzo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "421538241284-tf3osdo9r40hkhoifv0mkdeggqpsn7ep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

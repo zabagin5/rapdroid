@@ -13,4 +13,17 @@
     <color name="colorPrimaryblue">#1E88E5</color>
     <color name="colorPrimaryDarkblue">#1976D2</color>
     <color name="colorAccentblue">#1976D2</color>
+
+    <color name="bg_login">#FFF</color>
+    <color name="bg_register">#FFF</color>
+    <color name="bg_main">#428bca</color>
+    <color name="input_login">#FFF</color>
+    <color name="input_login_hint">#FFF</color>
+    <color name="input_register">#888888</color>
+    <color name="input_register_bg">#FFF</color>
+    <color name="input_register_hint">#FFF</color>
+    <color name="btn_login">#26ae90</color>
+    <color name="btn_login_bg">#eceef1</color>
+    <color name="lbl_name">#FFF</color>
+    <color name="btn_logut_bg">#ff6861</color>
 </resources>
