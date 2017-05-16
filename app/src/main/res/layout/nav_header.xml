@@ -15,7 +15,7 @@
     <ImageView
         android:id="@+id/image"
         android:paddingTop="16dp"
-        android:src="@drawable/logo_putih"
+        android:src="@mipmap/ic_launcher"
         tools:ignore="ContentDescription"
         android:layout_width="169dp"
         android:layout_height="69dp" />

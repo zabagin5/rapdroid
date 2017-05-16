@@ -7,6 +7,8 @@
     <string name="nametag2">Rental Photography Jember</string>
     <string name="title_activity_keranjang">Keranjang Kamera</string>
     <string name="title_activity_join">Sign in</string>
+    <string name="title_activity_payment">Pembayaran</string>
+    <string name="title_activity_profil">Profile</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -21,6 +23,7 @@
         completions."
     </string>
 
+    <string name="action_save">Save</string>
     <string name="register">Register</string>
     <string name="email">Email</string>
     <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
@@ -49,4 +52,28 @@
     <string name="btn_sign_out">Sign Out</string>
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">Join!</string>
+
+    <string name="slide_1_title">Hello NyiKamers!</string>
+    <string name="slide_1_desc">The easiest way to rent camera for your event!</string>
+
+    <string name="slide_2_title">Photography Equipment</string>
+    <string name="slide_2_desc">Many photographic equipment!</string>
+
+    <string name="slide_3_title">Money for You!</string>
+    <string name="slide_3_desc">If you have unused camera equipment, you can put it in NyiKam!</string>
+
+    <string name="slide_4_title">World Travel</string>
+    <string name="slide_4_desc">Book tickets of any transportation and travel the world!</string>
+
+    <string name="nmbarang">Nama Barang</string>
+    <string name="jnsbarang">Jenis Barang</string>
+    <string name="gbrbarang">Gambar</string>
+    <string name="qtybarang">Jumlah Barang</string>
+    <string name="deskripsi">Deskripsi Barang</string>
+
 </resources>

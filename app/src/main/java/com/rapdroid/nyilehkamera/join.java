@@ -75,16 +75,16 @@ public class join extends AppCompatActivity {
                 }
 
                 progressBar.setVisibility(View.VISIBLE);
-                //create user
+                //create User
                 auth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(join.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 Toast.makeText(join.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
-                                // If sign in fails, display a message to the user. If sign in succeeds
+                                // If sign in fails, display a message to the User. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
-                                // signed in user can be handled in the listener.
+                                // signed in User can be handled in the listener.
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(join.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();

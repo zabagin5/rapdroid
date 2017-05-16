@@ -1,31 +1,34 @@
 package com.rapdroid.nyilehkamera;
 
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
+import android.widget.ImageView;
+
 /**
  * Created by M. HILMI PRASETYA on 3/31/2017.
  */
-public class ImageAdapter  {
-    /** private DslrFragment mContext;
+public class ImageAdapter extends BaseAdapter {
+    private Context mContext;
 
-    public  ImageAdapter(DslrFragment c) {
+    public ImageAdapter(Context c) {
         mContext = c;
     }
 
-    @Override
     public int getCount() {
         return mThumbIds.length;
     }
 
-    @Override
     public Object getItem(int position) {
         return null;
     }
 
-    @Override
     public long getItemId(int position) {
         return 0;
     }
 
-    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView;
 
@@ -44,5 +47,5 @@ public class ImageAdapter  {
             R.drawable.kamera, R.drawable.kamera,
             R.drawable.kamera, R.drawable.kamera,
             R.drawable.kamera, R.drawable.kamera
-    }; **/
+    };
 }

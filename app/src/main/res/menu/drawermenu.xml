@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:title="Etalase Kamera"
+        android:id="@+id/etalase"
+        android:icon="@drawable/ic_home_white_24dp"/>
+
+    <item android:title="Profile"
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_account_circle_white_24dp"/>
+
+    <item android:title="Sewakan Kamera"
+        android:id="@+id/uploadbarang"
+        android:icon="@drawable/ic_camera_alt_white_24dp"/>
+
+    <!--
     <item android:title="Join with Us"
         android:id="@+id/join"
         android:icon="@drawable/ic_account_circle_white_24dp"/>
-
-    <item android:title="Etalase Kamera"
-          android:id="@+id/etalase"
-          android:icon="@drawable/ic_home_white_24dp"/>
+    -->
 
     <item android:title="Cart"
         android:id="@+id/cart"
@@ -26,6 +36,9 @@
         <item android:title="About Us"
              android:id="@+id/about"
              android:icon="@drawable/ic_info_white_24dp"/>
+        <item android:title="LogOut"
+            android:id="@+id/sign_out"
+            android:icon="@drawable/power_settings_new_white_24x24"/>
     </group>
 
 
