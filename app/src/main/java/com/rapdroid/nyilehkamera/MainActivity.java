@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -43,12 +44,13 @@ public class MainActivity extends AppCompatActivity{
         /**
          * SignOut Auth
          */
-        auth.signOut();
+        /*auth.signOut();
         // this listener will be called when there is change in firebase user session
         FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
+                Log.e("user",user.getDisplayName());
                 if (user == null) {
                     // user auth state is changed - user is null
                     // launch login activity
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity{
                     finish();
                 }
             }
-        };
+        };*/
 
         /**
          *Setup the DrawerLayout and NavigationView
@@ -139,5 +141,19 @@ public class MainActivity extends AppCompatActivity{
     }
     public void signOut() {
         auth.signOut();
+        // this listener will be called when there is change in firebase user session
+        FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                Log.e("user",user.getDisplayName());
+                if (user == null) {
+                    // user auth state is changed - user is null
+                    // launch login activity
+                    startActivity(new Intent(MainActivity.this, login.class));
+                    finish();
+                }
+            }
+        };
     }
 }

@@ -1,75 +1,116 @@
 package com.rapdroid.nyilehkamera;
 
-import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
+public class upload extends AppCompatActivity{
 
-public class upload extends AppCompatActivity {
+    /* private EditText input_nama_barang, input_gambar, input_jenis, input_jumlah;
+    private Button btnsimpan;
+    private ProgressDialog progressDialog;
 
-    private EditText input_nama_barang;
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_upload);
+
+        input_nama_barang = (EditText)findViewById(R.id.input_nama_barang);
+        input_gambar = (EditText)findViewById(R.id.input_gambar);
+        input_jenis = (EditText)findViewById(R.id.input_jenis);
+        input_jumlah = (EditText)findViewById(R.id.input_jumlah);
+        btnsimpan =(Button)findViewById(R.id.simpan);
+        progressDialog = new ProgressDialog(this);
+
+        btnsimpan.setOnClickListener(this);
+    }
+
+    private void uploadbarang(){
+        final String input_nama = input_nama_barang.getText().toString().trim();
+        final String input_image = input_gambar.getText().toString().trim();
+        final String input_tipe = input_jenis.getText().toString().trim();
+        final String input_qty = input_jumlah.getText().toString().trim();
+
+        progressDialog.setMessage("Upload Barang...");
+        progressDialog.show();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, upbarang.UPLOAD_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                progressDialog.dismiss();
+                try{
+                    JSONPObject jsonpObject = new JSONPObject(response);
+                    Toast.makeText(getApplicationContext(), jsonpObject.getString"message");
+                }
+            }
+        })
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view == simpan){
+
+        }
+    }
+    /* private EditText input_nama_barang;
     private EditText input_gambar;
     private EditText input_jenis;
     private EditText input_jumlah;
+    private TextView textViewUpbarang;
     private Button simpan;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
 
         Firebase.setAndroidContext(this);
 
-        simpan = (Button) findViewById(R.id.simpan);
-        input_nama_barang = (EditText) findViewById(R.id.input_nama_barang);
-        input_gambar = (EditText) findViewById(R.id.input_gambar);
-        input_jenis = (EditText) findViewById(R.id.input_jenis);
-        input_jumlah = (EditText) findViewById(R.id.input_jumlah);
+        simpan = (Button)findViewById(R.id.simpan);
+        input_nama_barang = (EditText)findViewById(R.id.input_nama_barang);
+        input_gambar = (EditText)findViewById(R.id.input_gambar);
+        input_jenis = (EditText)findViewById(R.id.input_jenis);
+        input_jumlah = (EditText)findViewById(R.id.input_jumlah);
 
-        simpan.setOnClickListener(new View.OnClickListener() {
+        simpan.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
+            public void onClick(View view){
                 Firebase ref = new Firebase(config.FIREBASE_URL);
 
-                String nama_barang = input_nama_barang.getText().toString().trim();
-                String gambar_barang = input_gambar.getText().toString().trim();
-                String jenis_barang = input_jenis.getText().toString().trim();
-                String jumlah_barang = input_jumlah.getText().toString().trim();
+                String input_nama = input_nama_barang.getText().toString().trim();
+                String input_image = input_gambar.getText().toString().trim();
+                String input_tipe = input_jenis.getText().toString().trim();
+                String input_qty = input_jumlah.getText().toString().trim();
 
-                upbarang upbarang = new upbarang();
+                upbarang upbrg = new upbarang();
 
-                upbarang.setName(nama_barang);
-                upbarang.setImage(gambar_barang);
-                upbarang.setJenis(jenis_barang);
-                upbarang.setJumlah(jumlah_barang);
+                upbrg.setName(input_nama);
+                upbrg.setImage(input_image);
+                upbrg.setJenis(input_tipe);
+                upbrg.setJumlah(input_qty);
 
-                ref.child("Upload Barang").setValue(upbarang);
+                ref.child("upbarang").setValue(upbrg);
 
                 ref.addAuthStateListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                            upbarang upbarang = postSnapshot.getValue(upbarang.class);
 
-                            String string = "Nama Barang :" + upbarang.getName() + "\n" +
-                                    "Gambar :" + upbarang.getImage() + "\n" +
-                                    "Jenis :" + upbarang.getJenis() + "\n" +
-                                    "Jumlah :" + upbarang.getJumlah() + "\n\n";
+                        for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                            //Getting the data from snapshot
+                            upbarang upbrg = postSnapshot.getValue(upbarang.class);
+
+                            //Adding it to a string
+                            String string = "Name: "+upbrg.getName()+"\nAddress: "+upbrg.getImage()+"\n\n";
+
+                            textViewUpbarang.setText(string);
                         }
                     }
 
                     @Override
                     public void onCancelled(FirebaseError firebaseError) {
-                        System.out.println("The read failed" + firebaseError.getMessage());
+                        System.out.println("The read failed: " + firebaseError.getMessage());
                     }
-                }
+                });
+
+            }
         });
-    }
+    } */
 }

@@ -14,6 +14,9 @@
     <color name="colorPrimaryDarkblue">#1976D2</color>
     <color name="colorAccentblue">#1976D2</color>
 
+    <color name="viewBg">#f1f5f8</color>
+    <color name="album_title">#4c4c4c</color>
+
     <color name="bg_login">#1976D2</color>
     <color name="bg_register">#FFF</color>
     <color name="bg_main">#428bca</color>

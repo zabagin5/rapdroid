@@ -76,4 +76,7 @@
     <string name="qtybarang">Jumlah Barang</string>
     <string name="deskripsi">Deskripsi Barang</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

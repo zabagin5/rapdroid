@@ -5,5 +5,5 @@ package com.rapdroid.nyilehkamera;
  */
 
 public class config {
-    public static final String FIREBASE_URL = "https://nyikam-477ad.firebaseio.com/";
+    //public static final String FIREBASE_URL = "https://nyikam-477ad.firebaseio.com/";
 }
