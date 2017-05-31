@@ -30,18 +30,22 @@ public class GridAdapterDslr extends RecyclerView.Adapter<GridAdapterDslr.ViewHo
         mItems.add(nama);
 
         nama = new DslrItem();
-        nama.setName("Canon EOS 1300D");
+        nama.setName("Canon EOS 550D");
         nama.setThumbnail(R.drawable.kamera);
         mItems.add(nama);
 
         nama = new DslrItem();
-        nama.setName("Go Pro Hero 4");
-        nama.setThumbnail(R.drawable.action);
+        nama.setName("Canon EOS 550D");
+        nama.setThumbnail(R.drawable.kamera);
+        mItems.add(nama);
+
+        nama.setName("Canon EOS 500D");
+        nama.setThumbnail(R.drawable.kamera1);
         mItems.add(nama);
 
         nama = new DslrItem();
-        nama.setName("Go Pro Hero 5");
-        nama.setThumbnail(R.drawable.action2);
+        nama.setName("Canon EOS 550D");
+        nama.setThumbnail(R.drawable.kamera);
         mItems.add(nama);
 
     }

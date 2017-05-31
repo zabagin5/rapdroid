@@ -1,12 +1,14 @@
 package com.rapdroid.nyilehkamera;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -99,7 +101,28 @@ public class GridAdapterAc extends RecyclerView.Adapter<GridAdapterAc.ViewHolder
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(),"This is " + getItemId(getItemCount()), Toast.LENGTH_SHORT).show();
+
+                //Toast.makeText(view.getContext(),"This is " + getItemId(getItemCount()), Toast.LENGTH_SHORT).show();
+
+                final Dialog dialog = new Dialog(view.getContext());
+                dialog.setContentView(R.layout.custom_dialogAc);
+                dialog.setTitle("Nyileh Kamera");
+
+                TextView textView = (TextView)dialog.findViewById(R.id.status);
+                textView.setText("Terimas Kasih");
+
+                //ImageView imageView = (ImageView)dialog.findViewById(R.id.img_thumbnail);
+                //imageView.setImageResource(R.drawable.kamera);
+
+                Button dialogButton = (Button)dialog.findViewById(R.id.dialogButtonOk);
+                dialogButton.setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
             }
         });
     }
@@ -112,9 +135,9 @@ public class GridAdapterAc extends RecyclerView.Adapter<GridAdapterAc.ViewHolder
 
     class ViewHolder extends RecyclerView.ViewHolder  {
 
-
         public ImageView imgThumbnail;
         public TextView tvspecies;
+        private Context context;
 
         public ViewHolder(View itemView) {
             super(itemView);
