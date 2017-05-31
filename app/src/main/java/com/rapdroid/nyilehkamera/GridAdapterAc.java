@@ -105,8 +105,11 @@ public class GridAdapterAc extends RecyclerView.Adapter<GridAdapterAc.ViewHolder
                 //Toast.makeText(view.getContext(),"This is " + getItemId(getItemCount()), Toast.LENGTH_SHORT).show();
 
                 final Dialog dialog = new Dialog(view.getContext());
-                dialog.setContentView(R.layout.custom_dialogAc);
+                dialog.setContentView(R.layout.custom_dialog_ac);
                 dialog.setTitle("Nyileh Kamera");
+
+                TextView textView1 = (TextView)dialog.findViewById(R.id.attention);
+                textView1.setText("Mohon Maaf untuk ketidaknyamanan dalam system order kami, versi Aplikasi ini masih unstable. demi kenyamanan order via Whatsapp +6282333843148. Terima Kasih atas Kepercayaannya :)");
 
                 TextView textView = (TextView)dialog.findViewById(R.id.status);
                 textView.setText("Terimas Kasih");

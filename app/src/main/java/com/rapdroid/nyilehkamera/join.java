@@ -90,7 +90,7 @@ public class join extends AppCompatActivity {
                                     Toast.makeText(join.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
-                                    startActivity(new Intent(join.this, join.class));
+                                    startActivity(new Intent(join.this, MainActivity.class));
                                     finish();
                                 }
                             }

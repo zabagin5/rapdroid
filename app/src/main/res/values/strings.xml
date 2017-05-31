@@ -9,6 +9,7 @@
     <string name="title_activity_join">Sign in</string>
     <string name="title_activity_payment">Pembayaran</string>
     <string name="title_activity_profil">Profile</string>
+    <string name="attention">Mohon Maaf untuk ketidaknyamanan dalam system order kami, versi Aplikasi ini masih unstable. demi kenyamanan order via Whatsapp +6282333843148. Terima Kasih atas Kepercayaannya :)</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
