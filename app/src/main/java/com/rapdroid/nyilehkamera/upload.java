@@ -1,8 +1,14 @@
 package com.rapdroid.nyilehkamera;
 
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 public class upload extends AppCompatActivity{
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_upload);
 
     /* private EditText input_nama_barang, input_gambar, input_jenis, input_jumlah;
     private Button btnsimpan;
@@ -111,6 +117,6 @@ public class upload extends AppCompatActivity{
                 });
 
             }
-        });
-    } */
+        });*/
+    }
 }

@@ -40,6 +40,4 @@
             android:id="@+id/sign_out"
             android:icon="@drawable/power_settings_new_white_24x24"/>
     </group>
-
-
 </menu>

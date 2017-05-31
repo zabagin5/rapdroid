@@ -35,10 +35,12 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".join"
-            android:label="@string/title_activity_join" />
-        <activity android:name=".login" />
+            android:label="@string/title_activity_join"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".login" android:screenOrientation="portrait" />
         <activity android:name=".ResetPasswordActivity" />
-        <activity android:name=".WelcomeActivity">
+        <activity android:name=".WelcomeActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

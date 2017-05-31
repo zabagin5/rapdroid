@@ -49,6 +49,7 @@ public class join extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(join.this, login.class));
+                finish();
             }
         });
 

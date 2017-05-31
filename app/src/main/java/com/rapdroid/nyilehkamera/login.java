@@ -28,13 +28,13 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if(PrefManager.getInstance(getApplicationContext()).getCeklogin() == "1"){
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+        }
+
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
-
-        /*if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(login.this, login.class));
-            finish();
-        }*/
 
         // set the view now
         setContentView(R.layout.activity_login);
@@ -56,6 +56,7 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(login.this, join.class));
+                finish();
             }
         });
 
@@ -101,6 +102,7 @@ public class login extends AppCompatActivity {
                                         Toast.makeText(login.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
+                                    PrefManager.getInstance(getApplicationContext()).login();
                                     Intent intent = new Intent(login.this, MainActivity.class);
                                     startActivity(intent);
                                     finish();

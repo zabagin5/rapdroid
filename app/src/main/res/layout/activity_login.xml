@@ -16,7 +16,6 @@
         android:padding="@dimen/activity_horizontal_margin"
         android:weightSum="1">
 
-
         <ImageView
             android:layout_width="184dp"
             android:layout_height="@dimen/logo_w_h"
@@ -24,6 +23,16 @@
             android:layout_marginBottom="30dp"
             android:src="@drawable/logo_putih"
             android:layout_weight="0.08" />
+
+        <TextView
+            android:id="@+id/gabung"
+            android:layout_below="@+id/logojoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIGN IN"
+            android:textSize="20dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"/>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"

@@ -55,7 +55,7 @@
             android:paddingLeft="180dp"
             android:id="@+id/textView4" />
 
-         <EditText
+         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/totalprice"

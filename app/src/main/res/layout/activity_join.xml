@@ -18,12 +18,23 @@
 
 
         <ImageView
+            android:id="@+id/logojoin"
             android:layout_width="169dp"
             android:layout_height="@dimen/logo_w_h"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="30dp"
             android:src="@drawable/logo_putih"
             android:layout_weight="0.13" />
+
+        <TextView
+            android:id="@+id/gabung"
+            android:layout_below="@+id/logojoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JOIN !!!"
+            android:textSize="20dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"/>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"

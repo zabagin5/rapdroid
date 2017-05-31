@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@drawable/aboutus"
     android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
@@ -18,8 +19,9 @@
             android:background="@color/orange"
             android:id="@+id/toolbar"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:title="Panduan" />
+            app:title="About Us" />
 
     </android.support.design.widget.AppBarLayout>
+
 
 </RelativeLayout>

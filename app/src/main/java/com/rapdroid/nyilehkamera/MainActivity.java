@@ -38,27 +38,18 @@ public class MainActivity extends AppCompatActivity{
          */
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
-        if (auth.getCurrentUser() != null) {
-            // User is logged in
-        }
-        /**
-         * SignOut Auth
-         */
-        /*auth.signOut();
-        // this listener will be called when there is change in firebase user session
-        FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        authListener = new FirebaseAuth.AuthStateListener(){
+
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                Log.e("user",user.getDisplayName());
                 if (user == null) {
-                    // user auth state is changed - user is null
-                    // launch login activity
                     startActivity(new Intent(MainActivity.this, login.class));
                     finish();
                 }
             }
-        };*/
+        };
 
         /**
          *Setup the DrawerLayout and NavigationView
@@ -112,7 +103,8 @@ public class MainActivity extends AppCompatActivity{
                      startActivity(new Intent(getApplicationContext(),payment.class));
                  }
                  if (menuItem.getItemId() == R.id.sign_out) {
-                         signOut();
+                     startActivity(new Intent(getApplicationContext(),login.class));
+                     finish();
                  }
                  return false;
             }
@@ -150,7 +142,8 @@ public class MainActivity extends AppCompatActivity{
                 if (user == null) {
                     // user auth state is changed - user is null
                     // launch login activity
-                    startActivity(new Intent(MainActivity.this, login.class));
+                    PrefManager.getInstance(getApplicationContext()).logout();
+                    startActivity(new Intent(getApplicationContext(), login.class));
                     finish();
                 }
             }
